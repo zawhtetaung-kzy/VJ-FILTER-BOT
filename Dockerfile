@@ -1,16 +1,19 @@
-# Don't Remove Credit @VJ_Botz
-# Subscribe YouTube Channel For Amazing Bot @Tech_VJ
-# Ask Doubt on telegram @KingVJ01
-
 FROM python:3.10.8-slim-buster
 
+# Update apt and install git
 RUN apt update && apt upgrade -y
 RUN apt install git -y
-COPY requirements.txt /requirements.txt
 
-RUN cd /
-RUN pip3 install -U pip && pip3 install -U -r requirements.txt
+# Copy requirements.txt and install dependencies
+COPY requirements.txt /requirements.txt
+RUN pip3 install -U pip && pip3 install -U -r /requirements.txt
+
+# Create and set the working directory for your bot
 RUN mkdir /VJ-FILTER-BOT
 WORKDIR /VJ-FILTER-BOT
+
+# Copy the bot files to the working directory
 COPY . /VJ-FILTER-BOT
-CMD ["python", "bot.py"]
+
+# Run the bot
+CMD ["python3", "bot.py"]
