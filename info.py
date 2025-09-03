@@ -13,7 +13,7 @@ id_pattern = re.compile(r'^.\d+$')
 SESSION = environ.get('SESSION', 'TechVJBot')
 API_ID = int(environ.get('API_ID', '23574009'))
 API_HASH = environ.get('API_HASH', '17e1e468e29fe266622955410bcc48f2')
-BOT_TOKEN = environ.get('BOT_TOKEN', "8115044155:AAFTMu3ksGttNXdHjunSVet32QbajU-9gFI")
+BOT_TOKEN = environ.get('BOT_TOKEN', "8386816325:AAHnW30XPssudKZ17q95Wn9HjvV-hz92IbU")
 
 
 # This Pictures Is For Start Message Picture, You Can Add Multiple By Giving One Space Between Each.
@@ -29,7 +29,7 @@ AUTH_USERS = (auth_users + ADMINS) if auth_users else []
 LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1002932116854'))
 
 # This Is File Channel Where You Upload Your File Then Bot Automatically Save It In Database 
-CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1003042889055').split()]  # For Multiple Id Use One Space Between Each.
+CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1002905615542').split()]  # For Multiple Id Use One Space Between Each.
 
 # auth_channel means force subscribe channel.
 # if REQUEST_TO_JOIN_MODE is true then force subscribe work like request to join fsub, else if false then work like normal fsub.
@@ -48,7 +48,7 @@ REQST_CHANNEL = int(reqst_channel) if reqst_channel and id_pattern.search(reqst_
 INDEX_REQ_CHANNEL = int(environ.get('INDEX_REQ_CHANNEL', LOG_CHANNEL))
 
 # This Is Your Bot Support Group Id , Here Bot Will Not Give File Because This Is Support Group.
-support_chat_id = environ.get('SUPPORT_CHAT_ID', '-4963796948')
+support_chat_id = environ.get('SUPPORT_CHAT_ID', '-1002973321662')
 SUPPORT_CHAT_ID = int(support_chat_id) if support_chat_id and id_pattern.search(support_chat_id) else None
 
 # This Channel Is For /batch command file store.
@@ -59,8 +59,8 @@ DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in enviro
 
 
 # MongoDB information
-DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://kzyfamily:tbXD4hNbcWhYsXi1@cluster0.yd3q2yo.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")   # IF Multiple Database Is False Then Fill Only This Database Url.
-DATABASE_NAME = environ.get('DATABASE_NAME', "techvjclonefilterbot")
+DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://filesharexbot:uPhC7m78IkR34Wnl@cluster0.pfxnz8t.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")   # IF Multiple Database Is False Then Fill Only This Database Url.
+DATABASE_NAME = environ.get('DATABASE_NAME', "filesharexbot")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'vjcollection')
 
 MULTIPLE_DATABASE = bool(environ.get('MULTIPLE_DATABASE', False)) # Set True or False
@@ -196,4 +196,3 @@ else:
 # Don't Remove Credit @VJ_Botz
 # Subscribe YouTube Channel For Amazing Bot @Tech_VJ
 # Ask Doubt on telegram @KingVJ01
-
