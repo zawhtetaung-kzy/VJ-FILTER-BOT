@@ -49,7 +49,7 @@ async def start():
             load = importlib.util.module_from_spec(spec)
             spec.loader.exec_module(load)
             sys.modules["plugins." + plugin_name] = load
-            print("Tech VJ Imported => " + plugin_name)
+            print("TKS Family Imported => " + plugin_name)
     if ON_HEROKU:
         asyncio.create_task(ping_server())
     b_users, b_chats = await db.get_banned()
@@ -61,25 +61,25 @@ async def start():
     temp.U_NAME = me.username
     temp.B_NAME = me.first_name
     logging.info(script.LOGO)
-    tz = pytz.timezone('Asia/Kolkata')
+    tz = pytz.timezone('Asia/Yangon')
     today = date.today()
     now = datetime.now(tz)
     time = now.strftime("%H:%M:%S %p")
     try:
         await TechVJBot.send_message(chat_id=LOG_CHANNEL, text=script.RESTART_TXT.format(today, time))
     except:
-        print("Make Your Bot Admin In Log Channel With Full Rights")
+        print("သင့်ရဲ့ Bot ကို Log Channel မှာ Admin အဖြစ် အခွင့်အရေးအပြည့်အဝပေးပါ")
     for ch in CHANNELS:
         try:
             k = await TechVJBot.send_message(chat_id=ch, text="**Bot Restarted**")
             await k.delete()
         except:
-            print("Make Your Bot Admin In File Channels With Full Rights")
+            print("သင့်ရဲ့ Bot ကို File Channel မှာ Admin အဖြစ် အခွင့်အရေးအပြည့်အဝပေးပါ")
     try:
         k = await TechVJBot.send_message(chat_id=AUTH_CHANNEL, text="**Bot Restarted**")
         await k.delete()
     except:
-        print("Make Your Bot Admin In Force Subscribe Channel With Full Rights")
+        print("သင့်ရဲ့ Bot ကို Force Subscribe Channel မှာ Admin အဖြစ် အခွင့်အရေးအပြည့်အဝပေးပါ")
     if CLONE_MODE == True:
         print("Restarting All Clone Bots.......")
         await restart_bots()
